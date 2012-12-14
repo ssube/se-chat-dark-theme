@@ -1,7 +1,7 @@
 @-moz-document domain("chat.stackexchange.com")  { 
 body {
   background-color : #000 !important;
-  background-image: url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/skewed_print.png");
+  background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/skewed_print.png") !important;
   color            : #ddd !important;
 }
 
@@ -17,7 +17,7 @@ body {
 /* Begin Bottom Area */
 #input-area {
   background-color : #333 !important;
-  background-image: url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/cartographer.png");
+  background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/cartographer.png") !important;
 }
 
 #input {
@@ -62,10 +62,18 @@ a.signature {
   background-color : #333 !important;
   color            : #ddd !important;
 }
+
 /* End OneBoxing */
 
 /* Begin Sidebar */
-#sidebar #info #sidebar-menu, #present-users, ul#my-rooms, div#starred-posts > div > ul > li {
+#sidebar #info #roomtitle {
+  text-shadow : 0px 1px 0px #000 !important;
+}
+
+#sidebar #info #sidebar-menu,
+#present-users,
+ul#my-rooms,
+div#starred-posts > div > ul > li {
   border-bottom : 1px dotted #222 !important;
 }
 
@@ -116,6 +124,10 @@ ul#my-rooms .quickleave {
 
 ul#my-rooms .quickleave:hover {
   opacity : 1.0 !important;
+}
+
+.vote-count-container.stars .img {
+  background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
 }
 
 /* End Sidebar */
