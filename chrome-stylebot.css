@@ -46,6 +46,10 @@ a.signature {
   color : #ddd !important;
 }
 
+.flair {
+  color: #ddd !important;
+}
+
 /* Begin OneBoxing */
 .ob-tweet,
 .ob-twitteruser {
