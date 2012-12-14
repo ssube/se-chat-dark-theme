@@ -118,13 +118,14 @@ ul#my-rooms> li:hover a, ul#my-rooms> li:hover div.last-message {
 
 ul#my-rooms .quickleave {
   float   : right !important;
-  opacity : 0.3 !important;
 }
 
 ul#my-rooms .quickleave:hover {
   opacity : 1.0 !important;
 }
 
+ul#my-rooms .quickswitch,
+ul#my-rooms .quickleave,
 .vote-count-container.stars .img {
   background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
 }
