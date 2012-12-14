@@ -1,4 +1,1 @@
-se-chat-dark-theme
-==================
-
-StackExchange Chat Dark Theme
+# StackExchange Chat Dark Theme
