@@ -47,28 +47,43 @@ a.signature {
 }
 
 .flair {
-  color: #ddd !important;
+  color : #ddd !important;
 }
 
 /* Begin OneBoxing */
 .ob-tweet,
-.ob-twitteruser {
-  background-color : #333 !important;
-}
-
-.ob-post-title a,
-.ob-tweet .ob-status-text {
-  color : #ddd !important;
-}
-
+.ob-twitteruser,
+.ob-wikipedia,
+.ob-amazon,
+.ob-gist,
+.ob-message,
+.ob-lpadbug,
+.ob-manpage,
+.ob-blog,
+.ob-exception,
 .ob-post {
   background-color : #333 !important;
   color            : #ddd !important;
 }
 
+.ob-post-title a,
+.ob-tweet .ob-status-text,
+.ob-wikipedia-title a,
+.ob-amazon-title a,
+.ob-lpadbug-title a,
+.ob-manpage-title a,
+.ob-blog-title a{
+  color : #ddd !important;
+}
+
 /* End OneBoxing */
 
 /* Begin Sidebar */
+#searchbox {
+  background-color : #000 !important;
+  color            : #ddd !important;
+}
+
 #sidebar #info #roomtitle {
   text-shadow : 0px 1px 0px #000 !important;
 }
@@ -122,6 +137,7 @@ ul#my-rooms> li:hover a, ul#my-rooms> li:hover div.last-message {
 
 ul#my-rooms .quickleave {
   float   : right !important;
+  opacity : 0.3 !important;
 }
 
 ul#my-rooms .quickleave:hover {
