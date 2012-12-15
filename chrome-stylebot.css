@@ -157,7 +157,9 @@ ul#my-rooms .quickleave,
 }
 
 /* End Sidebar */
-
+.vote-count-container.stars.owner-star .img,
+.vote-count-container.stars.user-star .img,
+.vote-count-container.stars.owner-star.user-star .img,
 .sprite {
   background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
 }
