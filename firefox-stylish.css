@@ -7,6 +7,7 @@ body {
 
 .messages {
   background-color : #222 !important;
+  border           : none !important;
   color            : #ddd !important;
 }
 
@@ -73,7 +74,7 @@ a.signature {
 .ob-amazon-title a,
 .ob-lpadbug-title a,
 .ob-manpage-title a,
-.ob-blog-title a{
+.ob-blog-title a {
   color : #ddd !important;
 }
 
@@ -132,7 +133,8 @@ ul#my-rooms> li:hover {
   background-color : #333 !important;
 }
 
-ul#my-rooms> li:hover a, ul#my-rooms> li:hover div.last-message {
+ul#my-rooms> li:hover a,
+ul#my-rooms> li:hover div.last-message {
   color : #fff !important;
 }
 
@@ -151,7 +153,15 @@ ul#my-rooms .quickleave,
   background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
 }
 
+#starred-posts ul li:hover {
+  background-color : #333 !important;
+}
+
 /* End Sidebar */
+
+.sprite {
+  background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
+}
 
 div.message:hover .action-link,
 .timestamp:hover + div.message .action-link {

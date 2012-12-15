@@ -6,6 +6,7 @@ body {
 
 .messages {
   background-color : #222 !important;
+  border           : none !important;
   color            : #ddd !important;
 }
 
