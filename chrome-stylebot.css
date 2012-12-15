@@ -131,7 +131,8 @@ ul#my-rooms> li:hover {
   background-color : #333 !important;
 }
 
-ul#my-rooms> li:hover a, ul#my-rooms> li:hover div.last-message {
+ul#my-rooms> li:hover a,
+ul#my-rooms> li:hover div.last-message {
   color : #fff !important;
 }
 
@@ -148,6 +149,10 @@ ul#my-rooms .quickswitch,
 ul#my-rooms .quickleave,
 .vote-count-container.stars .img {
   background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
+}
+
+#starred-posts ul li:hover {
+  background-color : #333 !important;
 }
 
 /* End Sidebar */
