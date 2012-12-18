@@ -80,6 +80,19 @@ a.signature {
 
 /* End OneBoxing */
 
+/* Begin Notifications */
+.notification, #feed-ticker {
+  background: rgba(0, 0, 0, 0.95) !important;
+
+  -moz-box-shadow: 0 1px 10px #545454;
+  -webkit-box-shadow: 0 1px 10px #545454;
+  box-shadow: 0 1px 10px #545454;
+}
+.ticker-item a {
+  color : #509FD8 !important;
+}
+/* End Notifications */
+
 /* Begin Sidebar */
 #searchbox {
   background-color : #000 !important;
@@ -118,15 +131,15 @@ ul#my-rooms> li.activity-3 {
 }
 
 ul#my-rooms> li.activity-4 {
-  color : #777 !important;
+  color : #888 !important;
 }
 
 ul#my-rooms> li.activity-5 {
-  color : #555 !important;
+  color : #777 !important;
 }
 
 ul#my-rooms> li.activity-6 {
-  color : #333 !important;
+  color : #666 !important;
 }
 
 ul#my-rooms> li:hover {
