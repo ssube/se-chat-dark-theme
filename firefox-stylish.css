@@ -63,7 +63,8 @@ a.signature {
 .ob-manpage,
 .ob-blog,
 .ob-exception,
-.ob-post {
+.ob-post,
+.ob-user {
   background-color : #333 !important;
   color            : #ddd !important;
 }
