@@ -20,6 +20,10 @@ body {
   background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/cartographer.png") !important;
 }
 
+#tabcomplete li {
+  background-color: #000 !important;
+}
+
 #input {
   background-color : #000 !important;
   color            : #ddd !important;
