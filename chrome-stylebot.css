@@ -10,6 +10,24 @@ body {
   color            : #ddd !important;
 }
 
+.mine .messages {
+  background-color : #362C22 !important;
+  border           : none !important;
+  color            : #ddd !important;
+}
+
+.messages .pending {
+  color            : #fb7 !important;
+}
+
+.messages .posted {
+  color            : #fdb !important;
+}
+
+.messages .neworedit {
+  color            : #fdb !important;
+}
+
 .msg-small, #sidebar {
   color : #ddd !important;
 }
@@ -43,8 +61,7 @@ div.message .meta,
 }
 
 .mention {
-  background-color : #fff !important;
-  color            : #000 !important;
+  background-color : #24A !important;
 }
 
 a.signature {
