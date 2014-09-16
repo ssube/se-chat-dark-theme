@@ -226,3 +226,22 @@ div.message:hover .action-link,
 	color            : #eee !important;
 	background-color : #333 !important;
 }
+
+/* Experimental Section */
+/* Rectangular, flat counters */
+#reply-count, #flag-count, #modflag-count, .reply-count, #annotation-count {
+	background       : #98cdb5;
+	background-color : #98cdb5;
+	border           : none;
+}
+
+#reply-count, #flag-count, #modflag-count {
+	left : 5px;
+}
+
+/* Rectangular buttons */
+.button {
+	-moz-border-radius    : 0;
+	-webkit-border-radius : 0;
+	border-radius         : 0;
+}
