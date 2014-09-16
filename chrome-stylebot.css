@@ -40,6 +40,7 @@ body {
 
 #tabcomplete li {
   background-color : #000 !important;
+  color            : #CCC !important;
 }
 
 #input {

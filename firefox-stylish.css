@@ -41,6 +41,7 @@ body {
 
 #tabcomplete li {
   background-color : #000 !important;
+  color            : #CCC !important;
 }
 
 #input {
@@ -207,4 +208,5 @@ div.message:hover .action-link,
 .timestamp:hover + div.message .action-link {
   color            : #eee !important;
   background-color : #333 !important;
-}} 
+}
+} 
