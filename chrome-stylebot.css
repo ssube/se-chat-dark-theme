@@ -17,15 +17,15 @@ body {
 }
 
 .messages .pending {
-  color            : #fb7 !important;
+  color : #fb7 !important;
 }
 
 .messages .posted {
-  color            : #fdb !important;
+  color : #fdb !important;
 }
 
 .messages .neworedit {
-  color            : #fdb !important;
+  color : #fdb !important;
 }
 
 .msg-small, #sidebar {
@@ -139,40 +139,40 @@ div#starred-posts > div > ul > li {
   margin-left : 10px !important;
 }
 
-ul#my-rooms> li.activity-0 {
+ul#my-rooms > li.activity-0 {
   color : #fff !important;
 }
 
-ul#my-rooms> li.activity-1 {
+ul#my-rooms > li.activity-1 {
   color : #ddd !important;
 }
 
-ul#my-rooms> li.activity-2 {
+ul#my-rooms > li.activity-2 {
   color : #bbb !important;
 }
 
-ul#my-rooms> li.activity-3 {
+ul#my-rooms > li.activity-3 {
   color : #999 !important;
 }
 
-ul#my-rooms> li.activity-4 {
+ul#my-rooms > li.activity-4 {
   color : #888 !important;
 }
 
-ul#my-rooms> li.activity-5 {
+ul#my-rooms > li.activity-5 {
   color : #777 !important;
 }
 
-ul#my-rooms> li.activity-6 {
+ul#my-rooms > li.activity-6 {
   color : #666 !important;
 }
 
-ul#my-rooms> li:hover {
+ul#my-rooms > li:hover {
   background-color : #333 !important;
 }
 
-ul#my-rooms> li:hover a,
-ul#my-rooms> li:hover div.last-message {
+ul#my-rooms > li:hover a,
+ul#my-rooms > li:hover div.last-message {
   color : #fff !important;
 }
 
