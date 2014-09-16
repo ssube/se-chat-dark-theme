@@ -1,93 +1,94 @@
 body {
-  background-color : #000 !important;
-  background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/skewed_print.png") !important;
-  color            : #ddd !important;
+	background-color : #000 !important;
+	background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/skewed_print.png") !important;
+	color            : #ddd !important;
 }
 
 .messages {
-  background-color : #222 !important;
-  border           : none !important;
-  color            : #ddd !important;
+	background-color : #222 !important;
+	border           : none !important;
+	color            : #ddd !important;
 }
 
 .mine .messages {
-  background-color : #362C22 !important;
-  border           : none !important;
-  color            : #ddd !important;
+	background-color : #362c22 !important;
+	border           : none !important;
+	color            : #ddd !important;
 }
 
 .messages .pending {
-  color : #fb7 !important;
+	color : #fb7 !important;
 }
 
 .messages .posted {
-  color : #fdb !important;
+	color : #fdb !important;
 }
 
 .messages .neworedit {
-  color : #fdb !important;
+	color : #fdb !important;
 }
 
 .msg-small, #sidebar {
-  color : #ddd !important;
+	color : #ddd !important;
 }
 
 /* Begin Bottom Area */
 #input-area {
-  background-color : #333 !important;
-  background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/cartographer.png") !important;
+	background-color : #333 !important;
+	background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/cartographer.png") !important;
 }
 
 #input-area tbody > tr > td {
-	width: 9%;
+	width : 9%;
 }
+
 #input-area tbody > tr > td .avatar {
-	margin-right:20px;
-	float:right;
+	margin-right : 20px;
+	float        : right;
 }
 
 #input-area td.chat-input {
-	width: 60%;
+	width : 60%;
 }
 
 #input-area td.chat-input textarea {
-	width: 100%;
-	margin-left:-30px;
+	width       : 100%;
+	margin-left : -30px;
 }
 
 #tabcomplete li {
-  background-color : #000 !important;
-  color            : #CCC !important;
+	background-color : #000 !important;
+	color            : #ccc !important;
 }
 
 #input {
-  background-color : #000 !important;
-  color            : #ddd !important;
+	background-color : #000 !important;
+	color            : #ddd !important;
 }
 
 /* End Bottom Area */
 
 div.message.reply-parent, div.message.reply-child {
-  background-color : #333 !important;
-  border           : 1px solid #fff !important;
+	background-color : #333 !important;
+	border           : 1px solid #fff !important;
 }
 
 div.message .meta,
 .timestamp {
-  background-color : #333 !important;
-  color            : #ddd !important;
+	background-color : #333 !important;
+	color            : #ddd !important;
 }
 
 .mention {
-  background-color : #24A !important;
+	background-color : #24a !important;
 }
 
 a.signature {
-  color : #ddd !important;
+	color : #ddd !important;
 }
 
 .flair {
-  color : #ddd !important;
+	color : #ddd !important;
 }
 
 /* Begin OneBoxing */
@@ -104,8 +105,8 @@ a.signature {
 .ob-post,
 .ob-user,
 .ob-job {
-  background-color : #333 !important;
-  color            : #ddd !important;
+	background-color : #333 !important;
+	color            : #ddd !important;
 }
 
 .ob-post-title a,
@@ -115,101 +116,101 @@ a.signature {
 .ob-lpadbug-title a,
 .ob-manpage-title a,
 .ob-blog-title a {
-  color : #ddd !important;
+	color : #ddd !important;
 }
 
 /* End OneBoxing */
 
 /* Begin Notifications */
 .notification, #feed-ticker {
-  background         : rgba(0, 0, 0, 0.95) !important;
+	background         : rgba(0, 0, 0, 0.95) !important;
 
-  -moz-box-shadow    : 0 1px 10px #545454 !important;
-  -webkit-box-shadow : 0 1px 10px #545454 !important;
-  box-shadow         : 0 1px 10px #545454 !important;
+	-moz-box-shadow    : 0 1px 10px #545454 !important;
+	-webkit-box-shadow : 0 1px 10px #545454 !important;
+	box-shadow         : 0 1px 10px #545454 !important;
 }
 
 .ticker-item a {
-  color : #509FD8 !important;
+	color : #509fd8 !important;
 }
 
 /* End Notifications */
 
 /* Begin Sidebar */
 #searchbox {
-  background-color : #000 !important;
-  color            : #ddd !important;
+	background-color : #000 !important;
+	color            : #ddd !important;
 }
 
 #sidebar #info #roomtitle {
-  text-shadow : 0px 1px 0px #000 !important;
+	text-shadow : 0px 1px 0px #000 !important;
 }
 
 #sidebar #info #sidebar-menu,
 #present-users,
 ul#my-rooms,
 div#starred-posts > div > ul > li {
-  border-bottom : 1px dotted #222 !important;
+	border-bottom : 1px dotted #222 !important;
 }
 
 .room-info > .last-message {
-  margin-left : 10px !important;
+	margin-left : 10px !important;
 }
 
 ul#my-rooms > li.activity-0 {
-  color : #fff !important;
+	color : #fff !important;
 }
 
 ul#my-rooms > li.activity-1 {
-  color : #ddd !important;
+	color : #ddd !important;
 }
 
 ul#my-rooms > li.activity-2 {
-  color : #bbb !important;
+	color : #bbb !important;
 }
 
 ul#my-rooms > li.activity-3 {
-  color : #999 !important;
+	color : #999 !important;
 }
 
 ul#my-rooms > li.activity-4 {
-  color : #888 !important;
+	color : #888 !important;
 }
 
 ul#my-rooms > li.activity-5 {
-  color : #777 !important;
+	color : #777 !important;
 }
 
 ul#my-rooms > li.activity-6 {
-  color : #666 !important;
+	color : #666 !important;
 }
 
 ul#my-rooms > li:hover {
-  background-color : #333 !important;
+	background-color : #333 !important;
 }
 
 ul#my-rooms > li:hover a,
 ul#my-rooms > li:hover div.last-message {
-  color : #fff !important;
+	color : #fff !important;
 }
 
 ul#my-rooms .quickleave {
-  float   : right !important;
-  opacity : 0.3 !important;
+	float   : right !important;
+	opacity : 0.3 !important;
 }
 
 ul#my-rooms .quickleave:hover {
-  opacity : 1.0 !important;
+	opacity : 1.0 !important;
 }
 
 ul#my-rooms .quickswitch,
 ul#my-rooms .quickleave,
 .vote-count-container.stars .img {
-  background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
+	background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
 }
 
 #starred-posts ul li:hover {
-  background-color : #333 !important;
+	background-color : #333 !important;
 }
 
 /* End Sidebar */
@@ -217,11 +218,11 @@ ul#my-rooms .quickleave,
 .vote-count-container.stars.user-star .img,
 .vote-count-container.stars.owner-star.user-star .img,
 .sprite {
-  background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
+	background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
 }
 
 div.message:hover .action-link,
 .timestamp:hover + div.message .action-link {
-  color            : #eee !important;
-  background-color : #333 !important;
+	color            : #eee !important;
+	background-color : #333 !important;
 }
