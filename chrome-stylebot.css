@@ -38,8 +38,18 @@ body {
 	background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/cartographer.png") !important;
 }
 
-#input-area tbody > tr > td {
+#input-area tbody > tr > td:first-child {
 	width : 9%;
+}
+
+#input-area td#chat-buttons,
+#input-area td#footer-logo {
+	width : 15.5%;
+}
+
+#input-area td#footer-logo {
+	text-align : right;
+	float      : none;
 }
 
 #input-area tbody > tr > td .avatar {
