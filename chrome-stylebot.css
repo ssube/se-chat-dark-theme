@@ -230,9 +230,12 @@ div.message:hover .action-link,
 /* Experimental Section */
 /* Rectangular, flat counters */
 #reply-count, #flag-count, #modflag-count, .reply-count, #annotation-count {
-	background       : #98cdb5;
-	background-color : #98cdb5;
-	border           : none;
+	background            : #98cdb5;
+	background-color      : #98cdb5;
+	border                : none;
+	-moz-border-radius    : 0;
+	-webkit-border-radius : 0;
+	border-radius         : 0;
 }
 
 #reply-count, #flag-count, #modflag-count {
