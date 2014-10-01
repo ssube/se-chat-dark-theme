@@ -67,6 +67,20 @@ body {
 	margin-left : -30px;
 }
 
+/* Hide separators */
+#sidebar-menu,
+#footer-legal {
+	color : transparent;
+}
+
+/* Now bring the parenthesis back */
+#leaveall {
+	border-left   : 1px solid #aaa;
+	border-right  : 1px solid #aaa;
+	border-radius : 5px;
+	padding       : 0 3px;
+}
+
 #tabcomplete li {
 	background-color : #000 !important;
 	color            : #ccc !important;
@@ -259,4 +273,10 @@ div.message:hover .action-link,
 	-webkit-border-radius : 0;
 	border-radius         : 0;
 }
-} 
+
+/* Resize images on hover */
+img.user-image:hover {
+    transition : 1s;
+    max-width  : 100%;
+    max-height : 100%;
+}} 
