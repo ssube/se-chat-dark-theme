@@ -32,6 +32,36 @@ body {
 	color : #ddd !important;
 }
 
+/* Begin Message */
+.monologue {
+	margin        : 0;
+	padding       : 3px 0;
+	border-radius : 6px;
+}
+
+.monologue:hover {
+	background-color : #333;
+}
+
+.message:hover {
+	border        : 1px solid transparent;
+	border-bottom : 1px solid #333;
+}
+
+.message .meta {
+	right         : 0;
+	bottom        : 0;
+	border-radius : 3px 3px 0 0;
+	padding       : 0 4px;
+}
+
+.message .meta span:hover {
+	background-color : #666;
+	border-radius    : 3px;
+}
+
+/* Begin End */
+
 /* Begin Bottom Area */
 #input-area {
 	background-color : #333 !important;
@@ -275,7 +305,7 @@ div.message:hover .action-link,
 
 /* Resize images on hover */
 img.user-image:hover {
-    transition : 1s;
-    max-width  : 100%;
-    max-height : 100%;
+	transition : 1s;
+	max-width  : 100%;
+	max-height : 100%;
 }
