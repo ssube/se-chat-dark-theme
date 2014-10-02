@@ -43,9 +43,24 @@ body {
 	background-color : #333;
 }
 
+.message {
+	margin-left  : 3px;
+	padding-left : 22px;
+}
+
 .message:hover {
 	border        : 1px solid transparent;
 	border-bottom : 1px solid #333;
+}
+
+.message .action-link {
+	border-radius : 3px 3px 0 0;
+}
+
+div.message:hover .action-link,
+.timestamp:hover + div.message .action-link {
+	color            : #eee !important;
+	background-color : #333 !important;
 }
 
 .message .meta {
@@ -161,6 +176,7 @@ a.signature {
 .ob-job {
 	background-color : #333 !important;
 	color            : #ddd !important;
+	border-radius    : 6px;
 }
 
 .ob-post-title a,
@@ -273,12 +289,6 @@ ul#my-rooms .quickleave,
 .vote-count-container.stars.owner-star.user-star .img,
 .sprite {
 	background-image : url("http://raw.github.com/oliversalzburg/se-chat-dark-theme/master/img/sprites.png") !important;
-}
-
-div.message:hover .action-link,
-.timestamp:hover + div.message .action-link {
-	color            : #eee !important;
-	background-color : #333 !important;
 }
 
 /* Experimental Section */
