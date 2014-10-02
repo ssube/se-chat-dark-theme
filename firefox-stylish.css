@@ -320,8 +320,10 @@ ul#my-rooms .quickleave,
 }
 
 /* Resize images on hover */
-img.user-image:hover {
+img.user-image {
 	transition : 1s;
+}
+img.user-image:hover {
 	max-width  : 100%;
 	max-height : 100%;
 }
