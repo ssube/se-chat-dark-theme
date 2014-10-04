@@ -50,8 +50,9 @@ body {
 }
 
 .message {
-	margin-left  : 3px;
-	padding-left : 22px;
+	margin-left   : 3px;
+	padding-left  : 22px;
+	border-radius : 3px;
 }
 
 .message:hover {
@@ -323,6 +324,7 @@ ul#my-rooms .quickleave,
 img.user-image {
 	transition : 1s;
 }
+
 img.user-image:hover {
 	max-width  : 100%;
 	max-height : 100%;
