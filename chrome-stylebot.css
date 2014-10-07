@@ -41,7 +41,7 @@ body {
 }
 
 .monologue:hover {
-	background-color : #333;
+	background-color : #222;
 }
 
 .avatar-32 {
@@ -52,7 +52,7 @@ body {
 	margin-left   : 3px;
 	padding-left  : 22px;
 	border-radius : 3px;
-	transition    : 1s;
+	transition    : .3s;
 }
 
 .message:hover {
