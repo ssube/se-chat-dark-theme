@@ -155,7 +155,9 @@ div.message .meta,
 }
 
 .mention {
-	background-color : #24a !important;
+	background-color : transparent;
+	color            : #fff;
+	text-shadow      : 0 0 13px #fff;
 }
 
 a.signature {
