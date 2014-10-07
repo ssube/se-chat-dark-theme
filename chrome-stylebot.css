@@ -52,6 +52,7 @@ body {
 	margin-left   : 3px;
 	padding-left  : 22px;
 	border-radius : 3px;
+	transition    : 1s;
 }
 
 .message:hover {
