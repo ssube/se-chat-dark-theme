@@ -82,6 +82,11 @@ div.message:hover .action-link,
 	border-radius    : 3px;
 }
 
+.highlight {
+	background-color: inherit;
+	border-color: yellow;
+}
+
 /* Begin End */
 
 /* Begin Bottom Area */
