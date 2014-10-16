@@ -83,8 +83,9 @@ div.message:hover .action-link,
 }
 
 .highlight {
-	background-color: inherit;
-	border-color: yellow;
+	background-color : inherit;
+	border-color     : yellow;
+	margin-right     : 0;
 }
 
 /* Begin End */
