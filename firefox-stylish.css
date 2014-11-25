@@ -65,6 +65,11 @@ body {
 	border-radius : 3px 3px 0 0;
 }
 
+/* Background color for selected messages in select mode. */
+#main.select-mode .message.selected {
+	background-color: #3C3932;
+}
+
 div.message:hover .action-link,
 .timestamp:hover + div.message .action-link {
 	color            : #eee !important;
