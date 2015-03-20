@@ -334,7 +334,7 @@ body.outside #container,
 .monologue.catchup-marker {
 	border-top-color: rgba(155,155,155,0.5) !important;
 }
-.subheader #tabs a, .subheader #tabs .disabled {
+.subheader #tabs a:not(.youarehere), .subheader #tabs .disabled {
 	border: none !important;
 }
 .subheader #tabs a.youarehere {
@@ -360,4 +360,11 @@ body.outside #container,
 .flags-popup li.flagged-message div.content {
 	color: #eee !important;
 	background-color: #242424 !important;
+}
+
+/* bandaid logo solution */
+.header-logo {
+  margin: 0;
+  background-color: #ddd !important;
+  padding: 3px 6px 9px 6px !important;
 }
