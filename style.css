@@ -95,30 +95,6 @@ div.message:hover .action-link,
 	background-color: #333 !important;
 	background-image: url("http://i.stack.imgur.com/JfVoA.png") !important;
 }
-/* TODO:: check this shit out; */
-
-#input-area tbody > tr > td:first-child {
-	width: 9%;
-}
-#input-area td#chat-buttons,
-#input-area td#footer-logo {
-	width: 15.5%;
-}
-#input-area td#footer-logo {
-	text-align: right;
-	float: none;
-}
-#input-area tbody > tr > td .avatar {
-	margin-right: 20px;
-	float: right;
-}
-#input-area td.chat-input {
-	width: 60%;
-}
-#input-area td.chat-input textarea {
-	width: 100%;
-	margin-left: -30px;
-}
 /* Hide separators */
 
 #sidebar-menu,
