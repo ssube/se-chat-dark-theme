@@ -1,6 +1,6 @@
 # StackExchange Chat Dark Theme (plus!)
 
-## rlemon fork v0.0.1.8
+## rlemon fork v0.0.1.9
 
 restyled Olivers original and added a bunch of JS "features".   
   

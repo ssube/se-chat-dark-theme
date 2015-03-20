@@ -41,10 +41,10 @@ body,
 	margin: 0;
 	padding: 3px 0;
 	border-radius: 6px;
-	transition: .3s;
+	transition: .1s;
 }
-.monologue:hover {
-	background-color: #282828;
+.monologue:hover .messages {
+	background-color: #282828 !important;
 }
 .avatar-32 {
 	margin-top: 5px;
@@ -82,9 +82,12 @@ div.message:hover .action-link,
 	background-color: #666;
 	border-radius: 3px;
 }
+.message.highlight {
+	background-color: rgba(225,225,225,0.17) !important;
+}
 .highlight {
 	background-color: inherit;
-	border-color: yellow;
+	border-color: rgba(225,225,0,0.12) !important;
 	margin-right: 0;
 }
 /* Begin End */
