@@ -4,7 +4,7 @@
 
 restyled Olivers original and added a bunch of JS "features".   
   
-![](http://i.imgur.com/DsLRRsy.png)
+![](http://i.imgur.com/xxMPtoI.png)
 
 Only tested in Chrome. FireFox is on the roadmap. IE is smelly and will not get support. 
 
