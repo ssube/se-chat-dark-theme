@@ -343,3 +343,10 @@ body.outside #container,
 	border-bottom-color: #999 !important;
 	border-right-color: #ddd !important;
 }
+
+/* Flags */
+
+.flags-popup li.flagged-message div.content {
+	color: #eee !important;
+	background-color: #242424 !important;
+}
