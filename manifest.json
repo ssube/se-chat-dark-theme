@@ -1,0 +1,16 @@
+{
+	"name": "SO Dark Chat +",
+	"description": "Provides a new dark theme for stackoverflow chat",
+	"version": "0.0.1.5",
+	"manifest_version": 2,
+	"content_scripts": [
+		{
+			"matches" : ["http://chat.stackoverflow.com/*","https://chat.stackoverflow.com/*"],
+			"js": ["script.js"],
+			"css": ["style.css"]
+		}
+	],
+	"icons": {
+		"128": "img/icon_128.png"
+	}
+}

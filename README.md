@@ -1,8 +1,7 @@
-# StackExchange Chat Dark Theme
+# StackExchange Chat Dark Theme (plus!)
 
-## Root Access (primary re-theming target)
-Also in use here:
-- https://github.com/oliversalzburg/se-chat-reply-highlight
-- https://github.com/oliversalzburg/se-chat-room-expand
+## rlemon fork
 
-![](http://i.imgur.com/WFycDIw.png)
+restyled Olivers original and added a bunch of JS "features".   
+  
+Only tested in Chrome. FireFox is on the roadmap. IE is smelly and will not get support. 
