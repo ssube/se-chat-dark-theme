@@ -364,7 +364,7 @@ body.outside #container,
 
 /* bandaid logo solution */
 .header-logo {
-  margin: 0;
-  background-color: #ddd !important;
-  padding: 3px 6px 9px 6px !important;
+	margin: 0;
+	background-color: #ddd !important;
+	padding: 3px 6px 9px 6px !important;
 }
