@@ -107,9 +107,6 @@ div.message:hover .action-link,
 /* Now bring the parenthesis back */
 
 #leaveall {
-	border-left: 1px solid #aaa;
-	border-right: 1px solid #aaa;
-	border-radius: 5px;
 	padding: 0 3px;
 }
 #tabcomplete li {
@@ -157,6 +154,7 @@ a.signature {
 .ob-post,
 .ob-user,
 .ob-job {
+	padding: 0 1.5em !important;
 	background-color: #333 !important;
 	color: #ddd !important;
 }

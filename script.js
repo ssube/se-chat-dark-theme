@@ -86,9 +86,25 @@ function visualHexColors(node) {
     }
 }
 
+function webmOnebox(node) {
+    if (node.classList && node.classList.contains('message') && !node.classList.contains('pending')) {
+        var content = node.querySelector('.content');
+        if( content.length > 1 ) return;
+        var link = content.querySelector('a');
+        if( !link || !/(webm|gifv)$/.test(link.href) ) return;
+        var video = document.createElement('video');
+        video.controls = true;
+        video.src = link.href.replace(/(gifv)$/,'webm');
+        video.width = 320;
+        video.height = 240;
+        link.parentNode.replaceChild(video, link);
+    }
+}
+
 function parseNode(node) {
     colorUsers(node);
     visualHexColors(node);
+    webmOnebox(node);
 }
 /* experimental colour chooser 
  this entire codeblock is sloppy 
@@ -121,6 +137,7 @@ chat.addEventListener('click', function(e) {
 setTimeout(function() {
     [].forEach.call(chat.querySelectorAll('.user-container'), colorUsers);
     [].forEach.call(chat.querySelectorAll('.user-container .message'), visualHexColors);
+    [].forEach.call(chat.querySelectorAll('.user-container .message'), webmOnebox);
     users.save();
 }, 1000); // some users are never parsed. this solves that.
 new MutationObserver(function(records) {
@@ -131,3 +148,29 @@ new MutationObserver(function(records) {
     childList: true,
     subtree: true
 });
+
+// april fools joke. deal with it. will be removed April 2.
+(function() {
+    "use strict";
+    var min = 30000,max = 5 * 60000;
+    (function glitch() {
+        function col() {
+            return '#' + (Math.random() * 100).toString(16).slice(-3)
+        }
+        function finish() {
+            [].forEach.call(document.all, function(el) {
+                el.style.color = el.style.backgroundColor = '';
+            });
+            setTimeout(glitch, Math.random() * min + (max - min));
+        }
+        var n = Math.floor(Math.random() * 4 + 2);
+        (function spazz() {
+            [].forEach.call(document.all, function(el) {
+                el.style.color = col();
+                el.style.backgroundColor = col();
+            });
+            if (!--n) return finish();
+            setTimeout(spazz, 3);
+        }());
+    }());
+}());
