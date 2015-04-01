@@ -345,3 +345,8 @@ body.outside #container,
 	background-color: #ddd !important;
 	padding: 3px 6px 9px 6px !important;
 }
+
+/* moderator username fix */
+.username.moderator {
+	color: #7798C2 !important;
+}

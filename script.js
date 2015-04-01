@@ -57,6 +57,9 @@ function hashCode(str) {
 }
 
 function colorCode(i) {
+    // dear reader, my code formatter likes to do this from time to time...
+    // I'm sick of fixing it and I'm not writing an exception to the extension. 
+    // I'm sorry, deal with it. 
     return '#' + (Math.min((i >> 24) & 0xFF, 175).toString(16) + Math.min((i >> 16) & 0xFF, 175).toString(16) + Math.min((i >> 8) & 0xFF, 175).toString(16) + Math.min(i & 0xFF, 175).toString(16)).slice(0, 6);
 }
 
@@ -78,6 +81,7 @@ function visualHexColors(node) {
         [].forEach.call(node.childNodes, function(child) {
             if (child.parentNode.tagName === 'PRE') return;
             if (/\B#(?:[0-9a-f]{3}){1,2}\b/ig.test(child.textContent)) {
+                // ummm.. 
                 child.innerHTML = child.innerHTML.replace(/\B#(?:[0-9a-f]{3}){1,2}\b/ig, function(match) {
                     return '<span style="width:12px;height:12px;border:1px solid #222;background-color:' + match + ';display:inline-block;"></span>' + match;
                 });
@@ -89,7 +93,9 @@ function visualHexColors(node) {
 function webmOnebox(node) {
     if (node.classList && node.classList.contains('message') && !node.classList.contains('pending')) {
         var content = node.querySelector('.content');
-        if( content.length > 1 ) return;
+        if ( [].filter.call(content.childNodes, function (child) {
+            return (child.nodeType === 1 || child.nodeType === 3)
+        }).length > 1 ) return; // shut up
         var link = content.querySelector('a');
         if( !link || !/(webm|gifv)$/.test(link.href) ) return;
         var video = document.createElement('video');
@@ -135,6 +141,7 @@ chat.addEventListener('click', function(e) {
     }
 })
 setTimeout(function() {
+    // this is where I just get lazy
     [].forEach.call(chat.querySelectorAll('.user-container'), colorUsers);
     [].forEach.call(chat.querySelectorAll('.user-container .message'), visualHexColors);
     [].forEach.call(chat.querySelectorAll('.user-container .message'), webmOnebox);
@@ -148,29 +155,3 @@ new MutationObserver(function(records) {
     childList: true,
     subtree: true
 });
-
-// april fools joke. deal with it. will be removed April 2.
-(function() {
-    "use strict";
-    var min = 30000,max = 5 * 60000;
-    (function glitch() {
-        function col() {
-            return '#' + (Math.random() * 100).toString(16).slice(-3)
-        }
-        function finish() {
-            [].forEach.call(document.all, function(el) {
-                el.style.color = el.style.backgroundColor = '';
-            });
-            setTimeout(glitch, Math.random() * min + (max - min));
-        }
-        var n = Math.floor(Math.random() * 4 + 2);
-        (function spazz() {
-            [].forEach.call(document.all, function(el) {
-                el.style.color = col();
-                el.style.backgroundColor = col();
-            });
-            if (!--n) return finish();
-            setTimeout(spazz, 3);
-        }());
-    }());
-}());
