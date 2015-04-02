@@ -54,10 +54,7 @@ chrome.storage.sync.get({
     },
     so_colour_users: {}
 }, function(savedOptions) {
-    options.useColorBorder.top = savedOptions.colorBorderPositions.top;
-    options.useColorBorder.right = savedOptions.colorBorderPositions.right;
-    options.useColorBorder.bottom = savedOptions.colorBorderPositions.bottom;
-    options.useColorBorder.left = savedOptions.colorBorderPositions.left;
+    options.useColorBorder = savedOptions.colorBorderPositions;
     init(savedOptions.so_colour_users);
 });
 
