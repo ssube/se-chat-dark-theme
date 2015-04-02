@@ -40,12 +40,38 @@ var users = {
         }
     },
     writeToSheet: function(key, value) {
-        userColorSheet.textContent += '.' + key + ' .messages { border-top: solid .25em  ' + value + ' !important; } ';
+        // dear sober me, I'm sorry
+        userColorSheet.textContent += '.' + key + ' .messages { ' + (
+            (options.useColorBorder.top ? ( 'border-top: solid .25em  ' + value + ' !important;' ) : '')  + 
+            (options.useColorBorder.right ? ( 'border-right: solid .25em  ' + value + ' !important;' ) : '')  + 
+            (options.useColorBorder.bottom ? ( 'border-bottom: solid .25em  ' + value + ' !important;' ) : '')  + 
+            (options.useColorBorder.left ? ( 'border-left: solid .25em  ' + value + ' !important;' ) : '')  ) + 
+        ' } ';
     },
     data: {}
 };
-document.head.appendChild(userColorSheet);
-users.load();
+var options = {
+    useColorBorder: {
+        top: undefined,
+        right: undefined, 
+        bottom: undefined,
+        left: undefined
+    }
+};
+chrome.storage.sync.get({
+    colorBorderPositions: {
+        top: false,
+        right: false, 
+        bottom: false,
+        left: false
+    }
+}, function(savedOptions) {
+    options.useColorBorder.top = savedOptions.colorBorderPositions.top;
+    options.useColorBorder.right = savedOptions.colorBorderPositions.right;
+    options.useColorBorder.bottom = savedOptions.colorBorderPositions.bottom;
+    options.useColorBorder.left = savedOptions.colorBorderPositions.left;
+    init();
+});
 
 function hashCode(str) {
     var hash = 0;
@@ -64,6 +90,20 @@ function colorCode(i) {
 }
 
 function colorUsers(node) {
+    if (node.classList && node.classList.contains('popup') && node.classList.contains('user-popup')) {
+        var img = node.querySelector('img');
+        var input = document.createElement('input');
+        var name = node.querySelector('.username').textContent;
+        input.type = 'color';
+        input.value = users.data[name].value;
+        img.parentNode.insertBefore(input, img);
+        input.onchange = function () {
+            users.data[name].value = this.value;
+            users.save();
+            userColorSheet.textContent = '';
+            users.load();
+        };
+    }
     if (node.classList && node.classList.contains('user-container')) {
         var user = node.querySelector('a .username').textContent,
             existing = users.lookup(user);
@@ -112,46 +152,30 @@ function parseNode(node) {
     visualHexColors(node);
     webmOnebox(node);
 }
-/* experimental colour chooser 
- this entire codeblock is sloppy 
-	*/
+
 function randomColor() {
     return '#' + Math.random().toString(16).slice(-6);
 }
-chat.addEventListener('click', function(e) {
-    if (!e.target.classList.contains('messages')) return;
-    if (e.offsetY <= 2) { // px size of the bar
-        var name = e.target.parentNode.querySelector('a .username').textContent;
-        var newValue = prompt('please enter a new hex value for this user. type `reset` to revert to the original value, `random` for a random value.', name in users.data ? users.data[name].value : '');
-        if (newValue) {
-            if (newValue === 'reset') {
-                delete users.data[name];
-            } else if (newValue === 'random') {
-                users.data[name].value = randomColor();
-            } else {
-                users.data[name].value = newValue;
-            }
-            users.save();
-            userColorSheet.textContent = '';
-            users.load();
-            if (newValue === 'reset') {
-                [].forEach.call(chat.querySelectorAll('.user-container'), parseNode);
-            }
-        }
-    }
-})
-setTimeout(function() {
-    // this is where I just get lazy
-    [].forEach.call(chat.querySelectorAll('.user-container'), colorUsers);
-    [].forEach.call(chat.querySelectorAll('.user-container .message'), visualHexColors);
-    [].forEach.call(chat.querySelectorAll('.user-container .message'), webmOnebox);
-    users.save();
-}, 1000); // some users are never parsed. this solves that.
-new MutationObserver(function(records) {
-    records.forEach(function(record) {
-        [].forEach.call(record.addedNodes, parseNode);
+
+function init(){
+    document.head.appendChild(userColorSheet);
+    users.load();
+
+    setTimeout(function() {
+        // this is where I just get lazy
+        [].forEach.call(chat.querySelectorAll('.user-container'), colorUsers);
+        [].forEach.call(chat.querySelectorAll('.user-container .message'), visualHexColors);
+        [].forEach.call(chat.querySelectorAll('.user-container .message'), webmOnebox);
+        users.save();
+    }, 1000); // some users are never parsed. this solves that.
+
+    new MutationObserver(function(records) {
+        records.forEach(function(record) {
+            [].forEach.call(record.addedNodes, parseNode);
+        });
+    }).observe(document.body, {
+        childList: true,
+        subtree: true
     });
-}).observe(chat, {
-    childList: true,
-    subtree: true
-});
+
+}

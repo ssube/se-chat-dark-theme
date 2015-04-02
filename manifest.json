@@ -1,7 +1,7 @@
 {
 	"name": "SO Dark Chat +",
 	"description": "Provides a new dark theme for stackoverflow chat",
-	"version": "0.0.2.1",
+	"version": "0.0.3.0",
 	"manifest_version": 2,
 	"content_scripts": [
 		{
@@ -12,5 +12,12 @@
 	],
 	"icons": {
 		"128": "img/icon_128.png"
+	},
+	"permissions": [
+     	"storage"
+    ],
+	"options_ui": {
+		"page": "options.html",
+		"chrome_style": true
 	}
 }
