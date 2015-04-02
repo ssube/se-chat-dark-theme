@@ -126,7 +126,7 @@ function webmOnebox(node) {
     if (node.classList && node.classList.contains('message') && !node.classList.contains('pending')) {
         var content = node.querySelector('.content');
         if ( [].filter.call(content.childNodes, function (child) {
-            return (child.nodeType === 1 || child.nodeType === 3)
+            return (child.nodeType === 1 || child.nodeType === 3);
         }).length > 1 ) return; // shut up
         var link = content.querySelector('a');
         if( !link || !/(webm|gifv)$/.test(link.href) ) return;
