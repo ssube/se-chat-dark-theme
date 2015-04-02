@@ -94,8 +94,9 @@ function colorUsers(node) {
                 users.load(users.data);
             });
         };
+        return;
     }
-    if (node.classList && node.classList.contains('user-container')) {
+    if (node.classList && node.classList.contains('user-container') && !node.classList.contains('present-user')) {
         var user = node.querySelector('a .username').textContent,
             existing = users.lookup(user);
         if (!existing && node.className) {
