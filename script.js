@@ -29,13 +29,11 @@ var users = {
         }, cb);
     },
     writeToSheet: function(key, value) {
-        // dear sober me, I'm sorry
-        userColorSheet.textContent += '.' + key + ' .messages { ' + (
-            (options.useColorBorder.top ? ( 'border-top: solid .25em  ' + value + ' !important;' ) : '')  + 
-            (options.useColorBorder.right ? ( 'border-right: solid .25em  ' + value + ' !important;' ) : '')  + 
-            (options.useColorBorder.bottom ? ( 'border-bottom: solid .25em  ' + value + ' !important;' ) : '')  + 
-            (options.useColorBorder.left ? ( 'border-left: solid .25em  ' + value + ' !important;' ) : '')  ) + 
-        ' } ';
+        var rules  = Object.keys(options.useColorBorder).reduce(function(currentString, key) {
+            currentString += options.useColorBorder[key] ? 'border-' + key + ': solid .25em ' + value + ' !important;' : '';
+            return currentString;
+        }, '');
+        userColorSheet.textContent += '.' + key + ' .messages { ' + rules + ' } ';
     },
     data: {}
 };
