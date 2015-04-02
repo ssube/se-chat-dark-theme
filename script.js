@@ -60,7 +60,7 @@ var options = {
 };
 chrome.storage.sync.get({
     colorBorderPositions: {
-        top: false,
+        top: true,
         right: false, 
         bottom: false,
         left: false
