@@ -6,7 +6,7 @@ var users = {
         return name in this.data;
     },
     store: function(name, key, value) {
-        console.log('storing ' + name + ' as ' + value);
+        // console.log('storing ' + name + ' as ' + value);
         this.data[name] = {
             key: key,
             value: value
@@ -14,30 +14,19 @@ var users = {
         this.writeToSheet(key, value);
         return value;
     },
-    load: function() {
-        var data;
-        try {
-            data = JSON.parse(localStorage.getItem('so_colour_users'));
-        } catch (err) {
-            console.error(err, 'malformed json in localStorage. clearing localStorage object.');
-            localStorage.setItem('so_colour_users', '{}');
-        }
-        if (!data) return;
-        Object.keys(data).forEach(function(user) {
+    load: function(colorUsersData) {
+        Object.keys(colorUsersData).forEach(function(user) {
             this.data[user] = {
-                key: data[user].key,
-                value: data[user].value
+                key: colorUsersData[user].key,
+                value: colorUsersData[user].value
             };
-            this.writeToSheet(data[user].key, data[user].value);
+            this.writeToSheet(colorUsersData[user].key, colorUsersData[user].value);
         }.bind(this));
     },
-    save: function() {
-        var dataString = JSON.stringify(this.data);
-        if (dataString) {
-            localStorage.setItem('so_colour_users', dataString);
-        } else {
-            console.error('could not save');
-        }
+    save: function(cb) {
+        chrome.storage.sync.set({
+            so_colour_users: users.data
+        }, cb);
     },
     writeToSheet: function(key, value) {
         // dear sober me, I'm sorry
@@ -64,13 +53,14 @@ chrome.storage.sync.get({
         right: false, 
         bottom: false,
         left: false
-    }
+    },
+    so_colour_users: {}
 }, function(savedOptions) {
     options.useColorBorder.top = savedOptions.colorBorderPositions.top;
     options.useColorBorder.right = savedOptions.colorBorderPositions.right;
     options.useColorBorder.bottom = savedOptions.colorBorderPositions.bottom;
     options.useColorBorder.left = savedOptions.colorBorderPositions.left;
-    init();
+    init(savedOptions.so_colour_users);
 });
 
 function hashCode(str) {
@@ -99,9 +89,10 @@ function colorUsers(node) {
         img.parentNode.insertBefore(input, img);
         input.onchange = function () {
             users.data[name].value = this.value;
-            users.save();
-            userColorSheet.textContent = '';
-            users.load();
+            users.save(function() {
+                userColorSheet.textContent = '';
+                users.load(users.data);
+            });
         };
     }
     if (node.classList && node.classList.contains('user-container')) {
@@ -157,9 +148,9 @@ function randomColor() {
     return '#' + Math.random().toString(16).slice(-6);
 }
 
-function init(){
+function init(colorUsersData){
     document.head.appendChild(userColorSheet);
-    users.load();
+    users.load(colorUsersData);
 
     setTimeout(function() {
         // this is where I just get lazy
