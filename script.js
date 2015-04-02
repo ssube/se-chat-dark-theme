@@ -82,13 +82,13 @@ function colorUsers(node) {
         input.type = 'color';
         input.value = users.data[name].value;
         img.parentNode.insertBefore(input, img);
-        input.onchange = function () {
+        input.addEventListener('change',function () {
             users.data[name].value = this.value;
             users.save(function() {
                 userColorSheet.textContent = '';
                 users.load(users.data);
             });
-        };
+        });
         return;
     }
     if (node.classList && node.classList.contains('user-container') && !node.classList.contains('present-user')) {
