@@ -12,6 +12,7 @@ body,
 .messages {
 	background-color: #222 !important;
 	color: #ddd !important;
+	border: none !important;
 	border-radius: 0 !important;
 }
 .system-message-container .system-message {
