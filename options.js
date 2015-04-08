@@ -1,16 +1,18 @@
 function save_options() {
-    var top,right,bottom,left;
+    var top,right,bottom,left,webm;
     top = document.getElementById('colorBorderTop').checked;
     right = document.getElementById('colorBorderRight').checked;
     bottom = document.getElementById('colorBorderBottom').checked;
     left = document.getElementById('colorBorderLeft').checked;
+    webm = document.getElementById('webmSupported').checked;
     chrome.storage.sync.set({
         colorBorderPositions: {
             top: top,
             right: right, 
             bottom: bottom,
             left: left
-        }
+        },
+        webm: webm
     }, function(){ 
         var status = document.getElementById('status');
             status.textContent = 'Options saved.';
@@ -27,12 +29,14 @@ function restore_options() {
             right: false, 
             bottom: false,
             left: false
-        }
+        },
+        webm: true
     }, function(options) {
         document.getElementById('colorBorderTop').checked = options.colorBorderPositions.top;
         document.getElementById('colorBorderRight').checked = options.colorBorderPositions.right;
         document.getElementById('colorBorderBottom').checked = options.colorBorderPositions.bottom;
         document.getElementById('colorBorderLeft').checked = options.colorBorderPositions.left;
+        document.getElementById('webmSupported').checked = options.webm;
     });
 }
 

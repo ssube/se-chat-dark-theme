@@ -29,7 +29,7 @@ var users = {
         }, cb);
     },
     writeToSheet: function(key, value) {
-        var rules  = Object.keys(options.useColorBorder).reduce(function(currentString, key) {
+        var rules = Object.keys(options.useColorBorder).reduce(function(currentString, key) {
             currentString += options.useColorBorder[key] ? 'border-' + key + ': solid .25em ' + value + ' !important;' : '';
             return currentString;
         }, '');
@@ -43,7 +43,8 @@ var options = {
         right: undefined, 
         bottom: undefined,
         left: undefined
-    }
+    },
+    webm: undefined
 };
 chrome.storage.sync.get({
     colorBorderPositions: {
@@ -52,9 +53,11 @@ chrome.storage.sync.get({
         bottom: false,
         left: false
     },
+    webm: true,
     so_colour_users: {}
 }, function(savedOptions) {
     options.useColorBorder = savedOptions.colorBorderPositions;
+    options.webm = savedOptions.webm;
     init(savedOptions.so_colour_users);
 });
 
@@ -137,7 +140,9 @@ function webmOnebox(node) {
 function parseNode(node) {
     colorUsers(node);
     visualHexColors(node);
-    webmOnebox(node);
+    if( options.webm ) {
+        webmOnebox(node);
+    }
 }
 
 function randomColor() {
@@ -152,7 +157,9 @@ function init(colorUsersData){
         // this is where I just get lazy
         [].forEach.call(chat.querySelectorAll('.user-container'), colorUsers);
         [].forEach.call(chat.querySelectorAll('.user-container .message'), visualHexColors);
-        [].forEach.call(chat.querySelectorAll('.user-container .message'), webmOnebox);
+        if( options.webm ) {
+            [].forEach.call(chat.querySelectorAll('.user-container .message'), webmOnebox);
+        }
         users.save();
     }, 1000); // some users are never parsed. this solves that.
 
