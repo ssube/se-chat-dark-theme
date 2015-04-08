@@ -94,7 +94,7 @@ div.message:hover .action-link,
 
 /* Begin Bottom Area */
 
-#input-area {
+#main #input-area {
 	background-color: #333 !important;
 	background-image: url("http://i.stack.imgur.com/JfVoA.png") !important;
 }
