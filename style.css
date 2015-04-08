@@ -11,15 +11,14 @@ body,
 }
 .messages {
 	background-color: #222 !important;
-	border: none !important;
 	color: #ddd !important;
+	border-radius: 0 !important;
 }
 .system-message-container .system-message {
 	color: #aaa !important;
 }
 .mine .messages {
 	background-color: #333 !important;
-	border: none !important;
 	color: #ddd !important;
 }
 .messages .pending {
