@@ -29,13 +29,11 @@ var users = {
         }, cb);
     },
     writeToSheet: function(key, value) {
-        // dear sober me, I'm sorry
-        userColorSheet.textContent += '.' + key + ' .messages { ' + (
-            (options.useColorBorder.top ? ( 'border-top: solid .25em  ' + value + ' !important;' ) : '')  + 
-            (options.useColorBorder.right ? ( 'border-right: solid .25em  ' + value + ' !important;' ) : '')  + 
-            (options.useColorBorder.bottom ? ( 'border-bottom: solid .25em  ' + value + ' !important;' ) : '')  + 
-            (options.useColorBorder.left ? ( 'border-left: solid .25em  ' + value + ' !important;' ) : '')  ) + 
-        ' } ';
+        var rules  = Object.keys(options.useColorBorder).reduce(function(currentString, key) {
+            currentString += options.useColorBorder[key] ? 'border-' + key + ': solid .25em ' + value + ' !important;' : '';
+            return currentString;
+        }, '');
+        userColorSheet.textContent += '.' + key + ' .messages { ' + rules + ' } ';
     },
     data: {}
 };
@@ -56,10 +54,7 @@ chrome.storage.sync.get({
     },
     so_colour_users: {}
 }, function(savedOptions) {
-    options.useColorBorder.top = savedOptions.colorBorderPositions.top;
-    options.useColorBorder.right = savedOptions.colorBorderPositions.right;
-    options.useColorBorder.bottom = savedOptions.colorBorderPositions.bottom;
-    options.useColorBorder.left = savedOptions.colorBorderPositions.left;
+    options.useColorBorder = savedOptions.colorBorderPositions;
     init(savedOptions.so_colour_users);
 });
 
@@ -87,13 +82,13 @@ function colorUsers(node) {
         input.type = 'color';
         input.value = users.data[name].value;
         img.parentNode.insertBefore(input, img);
-        input.onchange = function () {
+        input.addEventListener('change',function () {
             users.data[name].value = this.value;
             users.save(function() {
                 userColorSheet.textContent = '';
                 users.load(users.data);
             });
-        };
+        });
         return;
     }
     if (node.classList && node.classList.contains('user-container') && !node.classList.contains('present-user')) {
@@ -126,7 +121,7 @@ function webmOnebox(node) {
     if (node.classList && node.classList.contains('message') && !node.classList.contains('pending')) {
         var content = node.querySelector('.content');
         if ( [].filter.call(content.childNodes, function (child) {
-            return (child.nodeType === 1 || child.nodeType === 3)
+            return (child.nodeType === 1 || child.nodeType === 3);
         }).length > 1 ) return; // shut up
         var link = content.querySelector('a');
         if( !link || !/(webm|gifv)$/.test(link.href) ) return;
