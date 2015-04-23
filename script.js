@@ -109,9 +109,15 @@ function colorUsers(node) {
 function visualHexColors(node) {
     if (node.classList && node.classList.contains('message') && !node.classList.contains('pending') && !node.querySelector('.ob-post')) {
         [].forEach.call(node.childNodes, function(child) {
-            if (child.parentNode.tagName === 'PRE') return;
-            if (/\B#(?:[0-9a-f]{3}){1,2}\b/ig.test(child.textContent)) {
-                // ummm.. 
+            if (child.parentNode.tagName === 'PRE') {
+                return;
+            } else if (/\B(&#.+)\b/ig.test(child.textContent)) {
+                // Match HTML entities
+                child.innerHTML = child.innerHTML.replace(/\B(&#.+)\b/ig, function(match) {
+                    return '<span style="width:12px;height:12px;border:1px solid #222;display:inline-block;">' + match + '</span>' + match;
+                });
+            } else if (/\B#(?:[0-9a-f]{3}){1,2}\b/ig.test(child.textContent)) {
+                // Match colors
                 child.innerHTML = child.innerHTML.replace(/\B#(?:[0-9a-f]{3}){1,2}\b/ig, function(match) {
                     return '<span style="width:12px;height:12px;border:1px solid #222;background-color:' + match + ';display:inline-block;"></span>' + match;
                 });
